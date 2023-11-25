@@ -66,7 +66,7 @@ services:
       dockerfile: consensus-docker/Dockerfile
       args:
         DATA_DIR: "/consensus"
-        PEER_INFO: 
+        PEER_INFO: /ip4/190.92.198.117/tcp/13000/p2p/16Uiu2HAmViKFFVmHPMn6CLpbMTtMQjdzEnMrdJ4mEZvifaw1k3zW
         HOST_IP: 190.92.198.117
         FEE_RECIPIENT: "0x59527F3d76F82bC4E207333D7258425f3B21CBAc"
     volumes:
@@ -79,3 +79,15 @@ services:
       - 8080:8080
       - 13000:13000
 
+  contract-cli: &contract-cli
+    image: block.com/contract-cli
+    build:
+      context: .
+      dockerfile: contract-docker-base/Dockerfile
+      args:
+        DATA_DIR: "/basicconfig"
+        VERSION: master
+        SOURCE_CODE: "https://github.com/dachengcheng2022/ethereal"
+        SYMBOL: CLI
+    volumes:
+      - ./basicconfig:/basicconfig

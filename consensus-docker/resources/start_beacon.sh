@@ -2,12 +2,12 @@
 set -e
 
 echo "beacon starting "
-
+wget -P ${CONFIG_BASE_DIR}/ https://raw.githubusercontent.com/dachengcheng2022/genesis-ethpos-docker/master/public/genesis.ssz
 beacon-chain \
   --datadir=${DATA_DIR} \
   --min-sync-peers=0 \
   --genesis-state=${CONFIG_BASE_DIR}/genesis.ssz \
-  --bootstrap-node= \
+  --bootstrap-node=${PEER_INFO} \
   --chain-config-file=/config.yml \
   --config-file=/config.yml \
   --chain-id=97823 \
