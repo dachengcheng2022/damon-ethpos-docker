@@ -52,7 +52,6 @@ RUN git clone --branch ${VERSION} ${SOURCE_CODE} \
     && go build \
     && mv ethereal /usr/local/bin/
 
-
 RUN echo 'Asia/Shanghai' > /etc/timezone
 
 # ENTRYPOINT [ "/bin/bash","-c"]
