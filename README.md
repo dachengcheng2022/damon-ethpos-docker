@@ -22,14 +22,17 @@ docker-compose build
 
 ### 2 create validator keys
 ###### 2.1 replace your mnemonic
-###### 2.2 replace your keystore_password
+###### 2.2 replace your keystore_password. you can build a random mnemonic
+```shell 
+ docker-compose run staking-cli --language=English --non_interactive new-mnemonic --keystore_password=12345678 --chain="mainnet" --num_validators=3
+```
 ```shell
 docker-compose run staking-cli \
 --language=English \
 --non_interactive \
 existing-mnemonic \
 --folder /basicconfig \
---mnemonic="wheel churn risk possible dog crack document curious spring nature glow hat sound claw update oil arch word sauce pink employ city prison pyramid" \
+--mnemonic="shiver struggle someone pyramid paddle shuffle dog credit raccoon job inner load brass fragile clutch antenna point correct trumpet pair obvious pudding crisp recall" \
 --keystore_password=12345678 \
 --chain="mainnet" \
 --validator_start_index=0 \

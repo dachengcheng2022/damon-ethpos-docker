@@ -3,7 +3,6 @@ set -e
 
 echo "geth starting "
 cp /etc/jwtsecret   ${CONFIG_BASE_DIR}
-cp /etc/config.toml /execution/geth/
 
 geth  --datadir ${DATA_DIR} --http --http.api=net,web3,eth,debug,engine,admin \
                      --http.corsdomain=* --http.vhosts=* --http.addr=0.0.0.0   \
