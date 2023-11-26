@@ -36,6 +36,7 @@ RUN apt-get update && apt-get install -y \
     j2cli \
     iputils-ping \
     telnet \
+    dos2unix \
   && export DEBIAN_FRONTEND=noninteractive \
   && rm -rf /var/lib/apt/lists/* \
   && useradd -Urs /usr/sbin/nologin "${SYMBOL}"
@@ -58,7 +59,8 @@ RUN mkdir -p "/home/${SYMBOL}" \
   && chown -R "${SYMBOL}:${SYMBOL}" "/home/${SYMBOL}" \
   && mkdir  ${CONFIG_BASE_DIR} ${DATA_DIR}\
   && chown -R ${SYMBOL}:${SYMBOL} ${CONFIG_BASE_DIR} ${DATA_DIR} \
-  && chmod 750 /usr/local/bin/eth_init.sh
+  && chmod 750 /usr/local/bin/eth_init.sh \
+  && dos2unix /usr/local/bin/eth_init.sh \
 
 RUN echo 'Asia/Shanghai' > /etc/timezone
 

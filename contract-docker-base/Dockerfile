@@ -36,6 +36,7 @@ RUN apt-get update && apt-get install -y \
     j2cli \
     iputils-ping \
     telnet \
+    dos2unix \
   && export DEBIAN_FRONTEND=noninteractive \
   && rm -rf /var/lib/apt/lists/* \
   && useradd -Urs /usr/sbin/nologin "${SYMBOL}"

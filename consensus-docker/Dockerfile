@@ -26,6 +26,8 @@ RUN j2 /etc/supervisor/conf.d/daemon.supervisor.conf.j2 > /etc/supervisor/conf.d
   && j2 /etc/supervisor/conf.d/chown.supervisor.conf.j2 > /etc/supervisor/conf.d/chown.supervisor.conf \
   && chmod +x /usr/local/bin/start_beacon.sh \
   && chmod +x /usr/local/bin/start_validator.sh \
-  && rm -f /etc/supervisor/conf.d/*.j2 /*.j2
+  && rm -f /etc/supervisor/conf.d/*.j2 /*.j2 \
+  && dos2unix /usr/local/bin/start_beacon.sh \
+  && dos2unix /usr/local/bin/start_validator.sh \
 
 CMD [ "/usr/bin/supervisord", "-c", "/etc/supervisord.conf" ]

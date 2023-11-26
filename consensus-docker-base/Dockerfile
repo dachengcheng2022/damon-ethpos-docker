@@ -40,6 +40,7 @@ RUN apt-get update && apt-get install -y \
     iputils-ping \
     telnet \
     python3-pip \
+    dos2unix \
   && export DEBIAN_FRONTEND=noninteractive \
   && rm -rf /var/lib/apt/lists/* \
   && useradd -Urs /usr/sbin/nologin "${SYMBOL}"
@@ -62,6 +63,8 @@ COPY consensus-docker-base/resources/validator_init.sh /usr/local/bin/
 COPY consensus-docker-base/resources/account_password /account_password
 COPY consensus-docker-base/resources/wallet_password /wallet_password
 
+RUN dos2unix /usr/local/bin/beacon_init.sh
+RUN dos2unix /usr/local/bin/validator_init.sh
 
 RUN mkdir -p "/home/${SYMBOL}" \
   && chown -R "${SYMBOL}:${SYMBOL}" "/home/${SYMBOL}" \
