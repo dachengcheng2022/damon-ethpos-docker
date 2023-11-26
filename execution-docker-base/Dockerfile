@@ -60,7 +60,7 @@ RUN mkdir -p "/home/${SYMBOL}" \
   && mkdir  ${CONFIG_BASE_DIR} ${DATA_DIR}\
   && chown -R ${SYMBOL}:${SYMBOL} ${CONFIG_BASE_DIR} ${DATA_DIR} \
   && chmod 750 /usr/local/bin/eth_init.sh \
-  && dos2unix /usr/local/bin/eth_init.sh \
+  && dos2unix /usr/local/bin/eth_init.sh
 
 RUN echo 'Asia/Shanghai' > /etc/timezone
 

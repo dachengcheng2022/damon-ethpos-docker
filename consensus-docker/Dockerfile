@@ -10,7 +10,7 @@ ENV HOST_IP=${HOST_IP}
 ENV FEE_RECIPIENT=${FEE_RECIPIENT}
 ENV CGO_CFLAGS="-O -D__BLST_PORTABLE__"
 
-
+RUN echo "i"
 RUN mkdir ${DATA_DIR} /data-ephemeral \
   && chown -R ${SYMBOL}:${SYMBOL} ${DATA_DIR} /data-ephemeral 
 
@@ -21,13 +21,13 @@ COPY consensus-docker/resources/daemon.supervisor.conf.j2 /etc/supervisor/conf.d
 COPY consensus-docker/resources/start_beacon.sh /usr/local/bin/start_beacon.sh
 COPY consensus-docker/resources/start_validator.sh /usr/local/bin/start_validator.sh
 
+RUN dos2unix /usr/local/bin/start_beacon.sh
+RUN dos2unix /usr/local/bin/start_validator.sh
 # transform jinja template to configuration file
-RUN j2 /etc/supervisor/conf.d/daemon.supervisor.conf.j2 > /etc/supervisor/conf.d/${SYMBOL}.supervisor.conf \
-  && j2 /etc/supervisor/conf.d/chown.supervisor.conf.j2 > /etc/supervisor/conf.d/chown.supervisor.conf \
-  && chmod +x /usr/local/bin/start_beacon.sh \
-  && chmod +x /usr/local/bin/start_validator.sh \
-  && rm -f /etc/supervisor/conf.d/*.j2 /*.j2 \
-  && dos2unix /usr/local/bin/start_beacon.sh \
-  && dos2unix /usr/local/bin/start_validator.sh \
+RUN j2 /etc/supervisor/conf.d/daemon.supervisor.conf.j2 > /etc/supervisor/conf.d/${SYMBOL}.supervisor.conf
+RUN j2 /etc/supervisor/conf.d/chown.supervisor.conf.j2 > /etc/supervisor/conf.d/chown.supervisor.conf
+RUN chmod +x /usr/local/bin/start_beacon.sh
+RUN chmod +x /usr/local/bin/start_validator.sh
+RUN rm -f /etc/supervisor/conf.d/*.j2 /*.j2
 
 CMD [ "/usr/bin/supervisord", "-c", "/etc/supervisord.conf" ]

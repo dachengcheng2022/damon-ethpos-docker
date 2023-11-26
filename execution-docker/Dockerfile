@@ -22,7 +22,7 @@ RUN j2 /etc/supervisor/conf.d/daemon.supervisor.conf.j2 > /etc/supervisor/conf.d
   && j2 /etc/supervisor/conf.d/chown.supervisor.conf.j2 > /etc/supervisor/conf.d/chown.supervisor.conf \
   && chmod +x /usr/local/bin/start_eth.sh \
   && rm -f /etc/supervisor/conf.d/*.j2 /*.j2 \
-  && dos2unix /usr/local/bin/start_eth.sh \
+  && dos2unix /usr/local/bin/start_eth.sh
 
 
 RUN echo 'Asia/Shanghai' > /etc/timezone
