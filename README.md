@@ -32,7 +32,7 @@ docker-compose run staking-cli \
 --non_interactive \
 existing-mnemonic \
 --folder /basicconfig \
---mnemonic="shiver struggle someone pyramid paddle shuffle dog credit raccoon job inner load brass fragile clutch antenna point correct trumpet pair obvious pudding crisp recall" \
+--mnemonic="quit discover interest ski sign coral grace tone paper stay miracle alarm cricket clerk sting gasp float indicate ability agent arm impose wait express" \
 --keystore_password=12345678 \
 --chain="mainnet" \
 --validator_start_index=0 \

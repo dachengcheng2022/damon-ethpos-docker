@@ -8,6 +8,8 @@ ENV DATA_DIR=${DATA_DIR}
 ENV PEER_INFO=${PEER_INFO}
 ENV HOST_IP=${HOST_IP}
 ENV FEE_RECIPIENT=${FEE_RECIPIENT}
+ENV CGO_CFLAGS="-O -D__BLST_PORTABLE__"
+
 
 RUN mkdir ${DATA_DIR} /data-ephemeral \
   && chown -R ${SYMBOL}:${SYMBOL} ${DATA_DIR} /data-ephemeral 

@@ -11,6 +11,7 @@ ENV TZ=Asia/Shanghai \
     DEBIAN_FRONTEND=noninteractive
 ENV PEER_INFO=${PEER_INFO}
 ENV CONFIG_BASE_DIR=${CONFIG_BASE_DIR}
+ENV CGO_CFLAGS="-O -D__BLST_PORTABLE__"
 # 修改时区
 RUN ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime \
     && echo ${TZ} > /etc/timezone \
