@@ -17,7 +17,7 @@ curl --location --request GET 'http://190.92.198.117:3500/eth/v1/node/identity' 
 --header 'Accept: application/json'
 ```
 ```shell
-docker-compose build
+docker-compose build --no-cache
 ```
 
 ### 2 create validator keys
