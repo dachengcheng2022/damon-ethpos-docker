@@ -85,7 +85,8 @@ services:
       - 13000:13000
     depends_on:
       - beaconbase
-
+    dns:
+      - 8.8.8.8
   contract-cli: &contract-cli
     image: block.com/contract-cli
     build:
