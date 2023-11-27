@@ -53,14 +53,15 @@ services:
       - ./execution:/execution
       - ./execution-data:/data-ephemeral
       - ./basicconfig:/basicconfig
-
     ports:
       - 8551:8551
       - 8545:8545
       - 30303:30303
     depends_on:
       - ethbase
-
+    extra_hosts:
+    - "host.docker.internal:host-gateway"
+    
   beacon: &beacon-chain
     image: block.com/beacon-chain
     build:
@@ -68,7 +69,7 @@ services:
       dockerfile: consensus-docker/Dockerfile
       args:
         DATA_DIR: "/consensus"
-        PEER_INFO: /ip4/190.92.198.117/tcp/13000/p2p/16Uiu2HAmGXYWtj3MzcGoQraKGGkB7xqw1Tu2JHG1SUJjMXvNE86a
+        PEER_INFO: /ip4/190.92.198.117/tcp/13000/p2p/16Uiu2HAmPq8S5oDFQtYrE6BZpRpQqzGxieUHVS6HiMxs4pYoWoSP
         HOST_IP: 190.92.198.117
         FEE_RECIPIENT: "0x59527F3d76F82bC4E207333D7258425f3B21CBAc"
     volumes:
