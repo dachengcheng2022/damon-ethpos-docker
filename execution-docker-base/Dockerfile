@@ -63,8 +63,6 @@ RUN mkdir -p "/home/${SYMBOL}" \
   && dos2unix /usr/local/bin/eth_init.sh
 
 RUN echo 'Asia/Shanghai' > /etc/timezone
-# modify default dns
-RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf 
 
 # ENTRYPOINT [ "/bin/bash","-c"]
 

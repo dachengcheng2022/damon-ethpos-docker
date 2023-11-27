@@ -27,7 +27,9 @@ services:
     volumes:
       - ./basicconfig:/basicconfig 
       - ./execution:/execution
-
+    dns:
+      - 8.8.8.8
+      
   beaconbase: &beaconbase
     image: block.com/beaconbase
     build:
@@ -59,9 +61,7 @@ services:
       - 30303:30303
     depends_on:
       - ethbase
-    extra_hosts:
-    - "host.docker.internal:host-gateway"
-    
+        
   beacon: &beacon-chain
     image: block.com/beacon-chain
     build:
