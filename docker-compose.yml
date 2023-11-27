@@ -29,7 +29,7 @@ services:
       - ./execution:/execution
     dns:
       - 8.8.8.8
-      
+
   beaconbase: &beaconbase
     image: block.com/beaconbase
     build:
@@ -42,7 +42,9 @@ services:
         SYMBOL: BEACON
     volumes:
       - ./basicconfig:/basicconfig
-
+    dns:
+      - 8.8.8.8
+      
   eth: &eth
     image: block.com/geth
     build:
