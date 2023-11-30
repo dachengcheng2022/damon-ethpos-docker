@@ -32,14 +32,17 @@ docker-compose run staking-cli \
 --non_interactive \
 existing-mnemonic \
 --folder /basicconfig \
---mnemonic="quit discover interest ski sign coral grace tone paper stay miracle alarm cricket clerk sting gasp float indicate ability agent arm impose wait express" \
+--mnemonic="noodle fetch limb ancient label vital fog chef drop dust gauge jazz essence side employ pelican brick course ivory aspect need depth sweet license" \
 --keystore_password=12345678 \
 --chain="mainnet" \
 --validator_start_index=0 \
 --num_validators=3 \
 --devnet_chain_setting=/config_deposit.yml
 ```
-
+or powershell 
+```shell
+docker-compose run staking-cli --language=English --non_interactive existing-mnemonic --folder /basicconfig --mnemonic="noodle fetch limb ancient label vital fog chef drop dust gauge jazz essence side employ pelican brick course ivory aspect need depth sweet license" --keystore_password=12345678 --chain="mainnet" --validator_start_index=0 --num_validators=3 --devnet_chain_setting=/config_deposit.yml
+```
 ### 2 validator init 
 ```shell
 docker-compose run beaconbase validator_init.sh
