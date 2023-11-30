@@ -1,8 +1,11 @@
 #!/bin/bash
 set -e
 
-echo "beacon starting "
-wget -P ${CONFIG_BASE_DIR}/ https://raw.githubusercontent.com/dachengcheng2022/genesis-ethpos-docker/master/public/genesis.ssz
+echo "beacon starting " ;
+wget -P ${CONFIG_BASE_DIR}/ https://raw.githubusercontent.com/dachengcheng2022/genesis-ethpos-docker/master/public/genesis.ssz ;
+PEER_INFO=$(curl -X GET 'http://190.92.198.117:3500/eth/v1/node/identity' --header 'Content-Type: application/json'| jq -r .data.p2p_addresses[2]) ;
+
+echo "PEER_INFO=" ${PEER_INFO} ;
 beacon-chain \
   --datadir=${DATA_DIR} \
   --min-sync-peers=0 \

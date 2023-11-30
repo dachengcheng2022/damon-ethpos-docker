@@ -9,7 +9,6 @@ ENV VERSION=${VERSION}
 ENV SYMBOL=${SYMBOL}
 ENV TZ=Asia/Shanghai \
     DEBIAN_FRONTEND=noninteractive
-ENV PEER_INFO=${PEER_INFO}
 ENV CONFIG_BASE_DIR=${CONFIG_BASE_DIR}
 ENV CGO_CFLAGS="-O -D__BLST_PORTABLE__"
 # 修改时区
@@ -41,6 +40,7 @@ RUN apt-get update && apt-get install -y \
     telnet \
     python3-pip \
     dos2unix \
+    jq \
   && export DEBIAN_FRONTEND=noninteractive \
   && rm -rf /var/lib/apt/lists/* \
   && useradd -Urs /usr/sbin/nologin "${SYMBOL}"

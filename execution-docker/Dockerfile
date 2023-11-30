@@ -14,7 +14,7 @@ COPY execution-docker/resources/supervisord.conf /etc/supervisord.conf
 COPY execution-docker/resources/chown.supervisor.conf.j2 /etc/supervisor/conf.d/chown.supervisor.conf.j2
 COPY execution-docker/resources/daemon.supervisor.conf.j2 /etc/supervisor/conf.d/daemon.supervisor.conf.j2
 COPY execution-docker/resources/start_eth.sh /usr/local/bin/start_eth.sh
-COPY execution-docker/resources/config.toml /etc/config.toml
+COPY execution-docker/resources/config.tmp /etc/config.tmp
 COPY execution-docker/resources/jwtsecret /etc/jwtsecret
 
 # transform jinja template to configuration file

@@ -71,7 +71,6 @@ services:
       dockerfile: consensus-docker/Dockerfile
       args:
         DATA_DIR: "/consensus"
-        PEER_INFO: /ip4/190.92.198.117/tcp/13000/p2p/16Uiu2HAmSXmpJ49JAWpVVm4Vt882Rj3i23nh2daN34nyZaa9RvWu
         HOST_IP: 190.92.198.117
         FEE_RECIPIENT: "0x59527F3d76F82bC4E207333D7258425f3B21CBAc"
     volumes:
