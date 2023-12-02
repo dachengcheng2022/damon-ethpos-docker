@@ -32,7 +32,7 @@ docker-compose run staking-cli \
 --non_interactive \
 existing-mnemonic \
 --folder /basicconfig \
---mnemonic="noodle fetch limb ancient label vital fog chef drop dust gauge jazz essence side employ pelican brick course ivory aspect need depth sweet license" \
+--mnemonic="floor cruel thank hill unfold spray wagon fold aspect confirm match concert upon clown slice twenty water super nominee book entire border detect meat“ \
 --keystore_password=12345678 \
 --chain="mainnet" \
 --validator_start_index=0 \
@@ -41,7 +41,7 @@ existing-mnemonic \
 ```
 or powershell 
 ```shell
-docker-compose run staking-cli --language=English --non_interactive existing-mnemonic --folder /basicconfig --mnemonic="noodle fetch limb ancient label vital fog chef drop dust gauge jazz essence side employ pelican brick course ivory aspect need depth sweet license" --keystore_password=12345678 --chain="mainnet" --validator_start_index=0 --num_validators=3 --devnet_chain_setting=/config_deposit.yml
+docker-compose run staking-cli --language=English --non_interactive existing-mnemonic --folder /basicconfig --mnemonic="floor cruel thank hill unfold spray wagon fold aspect confirm match concert upon clown slice twenty water super nominee book entire border detect meat" --keystore_password=12345678 --chain="mainnet" --validator_start_index=0 --num_validators=3 --devnet_chain_setting=/config_deposit.yml
 ```
 ### 2 validator init 
 ```shell
@@ -68,7 +68,7 @@ docker-compose up -d beacon
 docker-compose run contract-cli ethereal beacon deposit  --allow-unknown-contract="true" \
 --allow-excessive-deposit="true" \
 --address="0x3e839677d23d9b7b0df00ed0c67750aa6412b75d" \
---connection=http://eth:8545/  \
+--connection=http://190.92.198.117:8545/  \
 --data="/basicconfig/validator_keys/deposit_data.json"  \
 --value="1024" --from="0x123463a4B065722E99115D6c222f267d9cABb524" \
 --privatekey="2e0834786285daccd064ca17f1654f67b4aef298acbb82cef9ec422fb4975622"
