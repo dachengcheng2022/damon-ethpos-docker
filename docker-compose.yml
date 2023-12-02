@@ -82,6 +82,7 @@ services:
       - 3500:3500
       - 8080:8080
       - 13000:13000
+      - 12000:12000
     depends_on:
       - beaconbase
     dns:
