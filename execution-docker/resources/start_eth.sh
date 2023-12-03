@@ -12,6 +12,7 @@ if [ ! -f "/etc/config.toml" ];then
     echo "process PEER_IP_LIST=$PEER_IP_LIST"
     for IP in $(echo "$PEER_IP_LIST" | tr "," "\n")
     do
+      set +e
       nc -z -w $TIMEOUT $IP $PORT &> /dev/null
       result=$?
       if [ $result -eq 0 ]; then
@@ -19,6 +20,7 @@ if [ ! -f "/etc/config.toml" ];then
         echo "*******************************NODE_URL********************=" ${NODE_URL};
         NODE_URL_LIST+="\"$NODE_URL\","
       fi
+      set -e
     done
     NODE_URL_LIST=${NODE_URL_LIST%,}
     echo $NODE_URL_LIST

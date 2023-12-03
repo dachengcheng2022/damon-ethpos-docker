@@ -1,5 +1,5 @@
 [Node.P2P]
-BootstrapNodes = ["NODE_URL"]
-StaticNodes    = ["NODE_URL"]
-TrustedNodes   = ["NODE_URL"]
+BootstrapNodes = [NODE_URL]
+StaticNodes    = [NODE_URL]
+TrustedNodes   = [NODE_URL]
 
