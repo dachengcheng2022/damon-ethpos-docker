@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 echo "beacon starting " ;
-wget -P douchain/ https://raw.githubusercontent.com/dachengcheng2022/genesis-ethpos-docker/master/public/genesis.ssz ;
+wget -P baseconfig/ https://raw.githubusercontent.com/dachengcheng2022/genesis-ethpos-docker/master/public/genesis.ssz ;
 
 TIMEOUT=1
 PORT=3500
