@@ -18,7 +18,7 @@ done
 OPEN_PEER_LIST=${OPEN_PEER_LIST%,}
 #PEER_INFO2=$(curl -X GET 'http://47.236.70.198:3500/eth/v1/node/identity' --header 'Content-Type: application/json'| jq -r .data.p2p_addresses[2]) ;
 #PEER_INFO3=$(curl -X GET 'http://8.219.234.134:3500/eth/v1/node/identity' --header 'Content-Type: application/json'| jq -r .data.p2p_addresses[2]) ;
-PEER_INFO=OPEN_PEER_LIST
+PEER_INFO=$OPEN_PEER_LIST
 echo "PEER_INFO=" ${PEER_INFO} ;
 beacon-chain \
   --datadir=${DATA_DIR} \
