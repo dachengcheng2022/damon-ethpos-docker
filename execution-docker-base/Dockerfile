@@ -38,7 +38,7 @@ RUN apt-get update && apt-get install -y \
     telnet \
     dos2unix \
     jq \
-    netcat \
+    nc \
   && export DEBIAN_FRONTEND=noninteractive \
   && rm -rf /var/lib/apt/lists/* \
   && useradd -Urs /usr/sbin/nologin "${SYMBOL}"
