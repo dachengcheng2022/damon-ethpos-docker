@@ -1,10 +1,24 @@
 #!/bin/bash
 set -e
-
 echo "beacon starting " ;
-wget -P ${CONFIG_BASE_DIR}/ https://raw.githubusercontent.com/dachengcheng2022/genesis-ethpos-docker/master/public/genesis.ssz ;
-PEER_INFO=$(curl -X GET 'http://190.92.198.117:3500/eth/v1/node/identity' --header 'Content-Type: application/json'| jq -r .data.p2p_addresses[2]) ;
+wget -P douchain/ https://raw.githubusercontent.com/dachengcheng2022/genesis-ethpos-docker/master/public/genesis.ssz ;
 
+TIMEOUT=1
+PORT=3500
+OPEN_PEER_LIST=""
+for IP in $(echo "$PEER_IP_LIST" | tr "," "\n")
+do
+  nc -z -w $TIMEOUT "$IP" "$PORT" &> /dev/null
+  result=$?
+  if [ $result -eq 0 ]; then
+    PEER_INFO=$(curl -X GET "http://$IP:$PORT/eth/v1/node/identity" --header 'Content-Type: application/json'| jq -r .data.p2p_addresses[2]) ;
+    OPEN_PEER_LIST+="$PEER_INFO,"
+  fi
+done
+OPEN_PEER_LIST=${OPEN_PEER_LIST%,}
+#PEER_INFO2=$(curl -X GET 'http://47.236.70.198:3500/eth/v1/node/identity' --header 'Content-Type: application/json'| jq -r .data.p2p_addresses[2]) ;
+#PEER_INFO3=$(curl -X GET 'http://8.219.234.134:3500/eth/v1/node/identity' --header 'Content-Type: application/json'| jq -r .data.p2p_addresses[2]) ;
+PEER_INFO=OPEN_PEER_LIST
 echo "PEER_INFO=" ${PEER_INFO} ;
 beacon-chain \
   --datadir=${DATA_DIR} \

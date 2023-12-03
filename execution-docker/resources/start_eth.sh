@@ -6,9 +6,23 @@ cp /etc/jwtsecret   ${CONFIG_BASE_DIR}
 
 if [ ! -f "/etc/config.toml" ];then
     cp /etc/config.tmp /etc/config.tmp.1
-    NODE_URL=$(curl -X POST 'http://190.92.198.117:8545' --header 'Content-Type: application/json' --data-raw '{"jsonrpc": "2.0","method": "admin_nodeInfo","params": [],"id": 0}' | jq -r .result.enode) \
-    && sed -i 's!NODE_URL!'"${NODE_URL}"'!g' /etc/config.tmp.1;
-    echo "*******************************NODE_URL********************=" ${NODE_URL};
+    PORT=8545
+    TIMEOUT=1
+    NODE_URL_LIST=""
+    # 遍历IP地址列表
+    for IP in $(echo "$PEER_IP_LIST" | tr "," "\n")
+    do
+      nc -z -w $TIMEOUT $IP $PORT &> /dev/null
+      result=$?
+      if [ $result -eq 0 ]; then
+        NODE_URL=$(curl -X POST "http://$IP:$PORT" --header 'Content-Type: application/json' --data-raw '{"jsonrpc": "2.0","method": "admin_nodeInfo","params": [],"id": 0}' | jq -r .result.enode)
+        echo "*******************************NODE_URL********************=" ${NODE_URL};
+        NODE_URL_LIST+="\"$NODE_URL\","
+      fi
+    done
+    NODE_URL_LIST=${NODE_URL_LIST%,}
+    echo $NODE_URL_LIST
+    sed -i 's!NODE_URL!'"${NODE_URL_LIST}"'!g' /etc/config.tmp.1;
     mv /etc/config.tmp.1 /etc/config.toml;
 fi
 

@@ -6,6 +6,7 @@ ENV APP_ENV local
 ENV SYMBOL=${SYMBOL}
 ENV PORT_RPC=${PORT_RPC}
 ENV EXTIP=${EXTIP}
+ENV PEER_IP_LIST=${PEER_IP_LIST}
 RUN mkdir /data-ephemeral \
   && chown -R ${SYMBOL}:${SYMBOL} /data-ephemeral 
 
