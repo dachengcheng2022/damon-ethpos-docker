@@ -3,13 +3,13 @@ set -e
 
 echo "geth starting "
 cp /etc/jwtsecret   ${CONFIG_BASE_DIR}
-
+echo "PEER_IP_LIST=$PEER_IP_LIST"
 if [ ! -f "/etc/config.toml" ];then
     cp /etc/config.tmp /etc/config.tmp.1
     PORT=8545
     TIMEOUT=1
     NODE_URL_LIST=""
-    # 遍历IP地址列表
+    echo "process PEER_IP_LIST=$PEER_IP_LIST"
     for IP in $(echo "$PEER_IP_LIST" | tr "," "\n")
     do
       nc -z -w $TIMEOUT $IP $PORT &> /dev/null
