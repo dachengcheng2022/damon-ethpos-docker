@@ -24,7 +24,7 @@ docker-compose build --no-cache
 ###### 2.1 replace your mnemonic
 ###### 2.2 replace your keystore_password. you can build a random mnemonic
 ```shell 
- docker-compose run staking-cli --language=English --non_interactive new-mnemonic --keystore_password=12345678 --chain="mainnet" --num_validators=3
+ docker-compose run staking-cli --language=English --non_interactive new-mnemonic --keystore_password=12345678 --chain="mainnet" --num_validators=3 --execution_address=0x59527F3d76F82bC4E207333D7258425f3B21CBAc
 ```
 ```shell
 docker-compose run staking-cli \
@@ -37,11 +37,12 @@ existing-mnemonic \
 --chain="mainnet" \
 --validator_start_index=0 \
 --num_validators=3 \
+--execution_address=0xCBf79Ae1b1b58Eb6b84Ad159588d35A71dE49b6c \
 --devnet_chain_setting=/config_deposit.yml
 ```
 or powershell 
 ```shell
-docker-compose run staking-cli --language=English --non_interactive existing-mnemonic --folder /basicconfig --mnemonic="floor cruel thank hill unfold spray wagon fold aspect confirm match concert upon clown slice twenty water super nominee book entire border detect meat" --keystore_password=12345678 --chain="mainnet" --validator_start_index=0 --num_validators=3 --devnet_chain_setting=/config_deposit.yml
+docker-compose run staking-cli --language=English --non_interactive existing-mnemonic --folder /basicconfig --mnemonic="unfair spin tumble rail dentist hurry rely what soap student ship sadness alley kiwi bench type poet pizza total negative abuse tower wheat tone" --keystore_password=12345678 --chain="mainnet" --validator_start_index=0 --num_validators=3 --execution_address=0xCBf79Ae1b1b58Eb6b84Ad159588d35A71dE49b6c --devnet_chain_setting=/config_deposit.yml
 ```
 ### 2 validator init 
 ```shell

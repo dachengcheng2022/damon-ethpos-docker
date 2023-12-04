@@ -74,7 +74,7 @@ services:
         DATA_DIR: "/consensus"
         HOST_IP: 190.92.198.117
         PEER_IP_LIST: "190.92.198.117,47.236.70.198,8.219.234.134"
-        FEE_RECIPIENT: "0x59527F3d76F82bC4E207333D7258425f3B21CBAc"
+        FEE_RECIPIENT: "0xB48F596e6523d98C986e34B42d2a82c25ae6e36B"
     volumes:
       - ./consensus:/consensus
       - ./consensus-data:/data-ephemeral
