@@ -42,7 +42,10 @@ beacon-chain \
   --p2p-local-ip=0.0.0.0 \
   --p2p-host-ip=${HOST_IP} \
   --p2p-static-id  \
-  --peer=${PEER_INFO}
+  --peer=${PEER_INFO} \
+  --no-discover \
+  --pprof \
+  --pprofaddr=0.0.0.0
 
 echo "beacon starting endding "
 
