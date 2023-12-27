@@ -43,7 +43,7 @@ beacon-chain \
   --p2p-host-ip=${HOST_IP} \
   --p2p-static-id  \
   --peer=${PEER_INFO} \
-  --no-discover \
+  --no-discovery \
   --pprof \
   --pprofaddr=0.0.0.0
 
