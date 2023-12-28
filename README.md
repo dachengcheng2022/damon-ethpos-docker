@@ -1,21 +1,7 @@
 ### 1 docker build 
 ###### 1.1 before build need modify /consensus-docker-base directory account_password and wallet_password's password. it the same as 2.2 keystore_password params
-1.2 config genesis node at execution-docker/resources/config.toml
-```shell
-curl --location --request POST 'http://190.92.198.117:8545' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "jsonrpc": "2.0",
-    "method": "admin_nodeInfo",
-    "params": [],
-    "id": 0
-}'
-```
-1.3 config genesis node at docker-compose.yml PEER-INFO use below cmd
-```shell
-curl --location --request GET 'http://190.92.198.117:3500/eth/v1/node/identity' \
---header 'Accept: application/json'
-```
+###### 1.2 ##change docker-compose.yml  eth and beacon expose IP###
+
 ```shell
 docker-compose build --no-cache
 ```
@@ -42,7 +28,7 @@ existing-mnemonic \
 ```
 or powershell 
 ```shell
-docker-compose run staking-cli --language=English --non_interactive existing-mnemonic --folder /basicconfig --mnemonic="fresh pluck damage amused galaxy flee seek word rough issue envelope cancel hair hazard happy level elite flag notable bag dance method addict breeze" --keystore_password=12345678 --chain="mainnet" --validator_start_index=0 --num_validators=3 --execution_address=0xCBf79Ae1b1b58Eb6b84Ad159588d35A71dE49b6c --devnet_chain_setting=/config_deposit.yml
+docker-compose run staking-cli --language=English --non_interactive existing-mnemonic --folder /basicconfig --mnemonic="crash dog curtain surface river current wood describe secret fan wear castle sea noble welcome seat antenna wear tray point media ocean destroy mom" --keystore_password=12345678 --chain="mainnet" --validator_start_index=0 --num_validators=3 --execution_address=0xCBf79Ae1b1b58Eb6b84Ad159588d35A71dE49b6c --devnet_chain_setting=/config_deposit.yml
 ```
 ### 2 validator init 
 ```shell
