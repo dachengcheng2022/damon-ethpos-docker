@@ -53,7 +53,7 @@ services:
       args:
         PORT_RPC: 8545
         EXTIP: "190.92.198.117"
-        PEER_IP_LIST: "190.92.198.117,47.236.70.198,8.219.234.134"
+        PEER_IP_LIST: "190.92.198.117,47.236.97.218,8.219.234.134"
     volumes:
       - ./execution:/execution
       - ./execution-data:/data-ephemeral
@@ -73,7 +73,7 @@ services:
       args:
         DATA_DIR: "/consensus"
         HOST_IP: 190.92.198.117
-        PEER_IP_LIST: "190.92.198.117,47.236.70.198,8.219.234.134"
+        PEER_IP_LIST: "190.92.198.117,47.236.97.218,8.219.234.134"
         FEE_RECIPIENT: "0xB48F596e6523d98C986e34B42d2a82c25ae6e36B"
     volumes:
       - ./consensus:/consensus

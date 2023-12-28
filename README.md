@@ -42,7 +42,7 @@ existing-mnemonic \
 ```
 or powershell 
 ```shell
-docker-compose run staking-cli --language=English --non_interactive existing-mnemonic --folder /basicconfig --mnemonic="unfair spin tumble rail dentist hurry rely what soap student ship sadness alley kiwi bench type poet pizza total negative abuse tower wheat tone" --keystore_password=12345678 --chain="mainnet" --validator_start_index=0 --num_validators=3 --execution_address=0xCBf79Ae1b1b58Eb6b84Ad159588d35A71dE49b6c --devnet_chain_setting=/config_deposit.yml
+docker-compose run staking-cli --language=English --non_interactive existing-mnemonic --folder /basicconfig --mnemonic="fresh pluck damage amused galaxy flee seek word rough issue envelope cancel hair hazard happy level elite flag notable bag dance method addict breeze" --keystore_password=12345678 --chain="mainnet" --validator_start_index=0 --num_validators=3 --execution_address=0xCBf79Ae1b1b58Eb6b84Ad159588d35A71dE49b6c --devnet_chain_setting=/config_deposit.yml
 ```
 ### 2 validator init 
 ```shell
