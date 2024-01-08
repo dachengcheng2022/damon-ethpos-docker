@@ -8,7 +8,7 @@ services:
       args:
         DATA_DIR: "/basicconfig"
         VERSION: master
-        SOURCE_CODE: "https://github.com/dachengcheng2022/staking-deposit-cli.git"
+        SOURCE_CODE: "https://github.com/orispopeye/staking-deposit-cli.git"
         SYMBOL: CLI
     volumes:
       - ./basicconfig:/basicconfig
@@ -21,8 +21,8 @@ services:
       args:
         CONFIG_BASE_DIR: "/basicconfig"
         DATA_DIR: "/execution"
-        SOURCE_CODE: "https://github.com/dachengcheng2022/go-ethereum.git"
-        VERSION: release_v1.13.4
+        SOURCE_CODE: "https://github.com/orispopeye/go-ethereum.git"
+        VERSION: release-v1.13.4
         SYMBOL: ETH
     volumes:
       - ./basicconfig:/basicconfig 
@@ -38,7 +38,7 @@ services:
       args:
         CONFIG_BASE_DIR: "/basicconfig"
         VERSION: release-v4.1.1
-        SOURCE_CODE: "https://github.com/dachengcheng2022/prysm.git"
+        SOURCE_CODE: "https://github.com/orispopeye/prysm.git"
         SYMBOL: BEACON
     volumes:
       - ./basicconfig:/basicconfig
@@ -99,7 +99,7 @@ services:
       args:
         DATA_DIR: "/basicconfig"
         VERSION: master
-        SOURCE_CODE: "https://github.com/dachengcheng2022/ethereal"
+        SOURCE_CODE: "https://github.com/orispopeye/ethereal"
         SYMBOL: CLI
     volumes:
       - ./basicconfig:/basicconfig
