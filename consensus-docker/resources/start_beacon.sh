@@ -12,7 +12,7 @@ do
   nc -z -w $TIMEOUT "$IP" "$PORT" &> /dev/null
   result=$?
   if [ $result -eq 0 ]; then
-    PEER_INFO=$(curl -X GET "http://$IP:$PORT/eth/v1/node/identity" --header 'Content-Type: application/json'| jq -r .data.p2p_addresses[2]) ;
+    PEER_INFO=$(curl -X GET "http://$IP:$PORT/eth/v1/node/identity" --header 'Content-Type: application/json'| jq -r .data.enr) ;
     OPEN_PEER_LIST+="$PEER_INFO,"
   fi
   set -e
