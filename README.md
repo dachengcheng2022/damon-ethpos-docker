@@ -55,7 +55,7 @@ docker-compose up -d beacon
 docker-compose run contract-cli ethereal beacon deposit  --allow-unknown-contract="true" \
 --allow-excessive-deposit="true" \
 --address="0x3e839677d23d9b7b0df00ed0c67750aa6412b75d" \
---connection=http://52.221.207.137:8545/  \
+--connection=http://172.31.21.169:8545/  \
 --data="/basicconfig/validator_keys/deposit_data.json"  \
 --value="1024" --from="0x161783e9f3d16d0d5a8e5027805c7a54dfe61e03" \
 --privatekey="2e0834786285daccd064ca17f1654f67b4aef298acbb82cef9ec422fb4975622"
