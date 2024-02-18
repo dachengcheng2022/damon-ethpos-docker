@@ -16,9 +16,16 @@ if [ ! -f "/etc/config.toml" ];then
       nc -z -w $TIMEOUT $IP $PORT &> /dev/null
       result=$?
       if [ $result -eq 0 ]; then
+        echo $IP $PORT
         NODE_URL=$(curl -X POST "http://$IP:$PORT" --header 'Content-Type: application/json' --data-raw '{"jsonrpc": "2.0","method": "admin_nodeInfo","params": [],"id": 0}' | jq -r .result.enode)
         echo "*******************************NODE_URL********************=" ${NODE_URL};
-        NODE_URL_LIST+="\"$NODE_URL\","
+        if [ -z "$NODE_URL" ]
+        then
+          echo "\$NODE_URL is empty"
+        else
+          echo "\$NODE_URL is NOT empty"
+          NODE_URL_LIST+="\"$NODE_URL\","
+        fi
       fi
       set -e
     done
