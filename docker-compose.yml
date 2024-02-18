@@ -44,7 +44,7 @@ services:
       - ./basicconfig:/basicconfig
     dns:
       - 8.8.8.8
-      
+
   eth: &eth
     image: block.com/geth
     build:
@@ -52,8 +52,8 @@ services:
       dockerfile: execution-docker/Dockerfile
       args:
         PORT_RPC: 8545
-        EXTIP: "190.92.198.117"
-        PEER_IP_LIST: "190.92.198.117,47.236.97.218,8.219.234.134"
+        EXTIP: "52.77.244.162"
+        PEER_IP_LIST: "3.0.19.180,52.77.244.162,13.229.62.102"
     volumes:
       - ./execution:/execution
       - ./execution-data:/data-ephemeral
@@ -72,9 +72,9 @@ services:
       dockerfile: consensus-docker/Dockerfile
       args:
         DATA_DIR: "/consensus"
-        HOST_IP: 190.92.198.117
-        PEER_IP_LIST: "190.92.198.117,47.236.97.218,8.219.234.134"
-        FEE_RECIPIENT: "0xB48F596e6523d98C986e34B42d2a82c25ae6e36B"
+        HOST_IP: 52.77.244.162
+        PEER_IP_LIST: "3.0.19.180,52.77.244.162,13.229.62.102"
+        FEE_RECIPIENT: "0x161783e9f3d16d0d5a8e5027805c7a54dfe61e03"
     volumes:
       - ./consensus:/consensus
       - ./consensus-data:/data-ephemeral
