@@ -22,7 +22,7 @@ services:
         CONFIG_BASE_DIR: "/basicconfig"
         DATA_DIR: "/execution"
         SOURCE_CODE: "https://github.com/oris-chain/go-ethereum.git"
-        VERSION: release-v1.13.4
+        VERSION: release-v1.13.5
         SYMBOL: ETH
     volumes:
       - ./basicconfig:/basicconfig 
