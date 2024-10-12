@@ -37,7 +37,7 @@ services:
       dockerfile: consensus-docker-base/Dockerfile
       args:
         CONFIG_BASE_DIR: "/basicconfig"
-        VERSION: release-v4.1.1
+        VERSION: release-v4.1.2
         SOURCE_CODE: "https://github.com/oris-chain/prysm.git"
         SYMBOL: BEACON
     volumes:
