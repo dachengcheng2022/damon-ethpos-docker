@@ -9,6 +9,10 @@ git checkout release
 ### 1 docker build 
 ###### 1.1 before build need modify /consensus-docker-base directory account_password and wallet_password's password. it the same as 2.2 keystore_password params
 ###### 1.2 ##change docker-compose.yml  eth and beacon expose IP###
+```shell
+sed -i 's/EXTIP: "[^"]*"/EXTIP: "13.250.64.220"/' docker-compose.yml
+sed -i 's/HOST_IP: [^"]*/HOST_IP: "13.250.64.220"/' docker-compose.yml
+```
 
 ```shell
 docker-compose build --no-cache
