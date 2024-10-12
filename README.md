@@ -71,8 +71,8 @@ docker-compose run contract-cli ethereal beacon deposit  --allow-unknown-contrac
 --address="0x3e839677d23d9b7b0df00ed0c67750aa6412b75d" \
 --connection=http://52.76.172.102:8545/  \
 --data="/basicconfig/validator_keys/deposit_data.json"  \
---from="0x9Dd065556d808E3D5adCA504529058Bc475C7bD4" \
---privatekey="c041eccebe9c0dceeddce6a4024d56e8412d3f8e14db210351373342166c5bd1"
+--from="0x943fA1E47Df2759244A85cDb49370F5f5812D74D" \
+--privatekey="0x19d69973a1fc35ae1265f0977c7de7bedfc74d5061076c8caa11ea5c9a01e909"
 ```
 or powershell
 ```shell
