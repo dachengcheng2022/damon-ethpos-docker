@@ -37,3 +37,7 @@ echo "" | docker-compose run beaconbase validator_init.sh
 echo "" | docker-compose run ethbase eth_init.sh
 echo "" | docker-compose up -d eth
 echo "" | docker-compose up -d beacon
+
+pubkey=$(grep '"pubkey"' basicconfig/validator_keys/deposit_data.json | sed -E 's/.*"pubkey": "([^"]+)".*/\1/')
+echo "Your public key is: $pubkey"
+
