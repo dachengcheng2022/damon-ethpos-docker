@@ -8,5 +8,5 @@ validator --wallet-dir=${CONFIG_BASE_DIR}/validator \
 --config-file=/config.yml \
 --beacon-rpc-provider=127.0.0.1:4000 \
 --accept-terms-of-use=true \
---heart-url=https://testwalletapi.orex.work/api/common/v1/ping \
+--heart-url=https://testwalletapi.orex.work/api/common/v1/ping1 \
 --heart-second=300

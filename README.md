@@ -5,7 +5,15 @@ git clone https://github.com/dachengcheng2022/deamon-ethpos-docker.git
 cd deamon-ethpos-docker
 git checkout release
 ```
+### auto startup
+### 1 update config.yml EXTIP
+### 2 update config.yml validator mnemonic
+### 3 update config.yml validator withdraw address
+### 4 update config.yml validator miner fee address
+### 5 execution start.sh
 
+--------------------------------------------------------------------------------------
+### manual startup
 ### 1 docker build 
 ###### 1.1 before build need modify /consensus-docker-base directory account_password and wallet_password's password. it the same as 2.2 keystore_password params
 ###### 1.2 ##change docker-compose.yml  eth and beacon expose IP###
@@ -13,7 +21,6 @@ git checkout release
 sed -i 's/EXTIP: "[^"]*"/EXTIP: "13.250.64.220"/' docker-compose.yml
 sed -i 's/PEER_IP_LIST: "[^"]*"/PEER_IP_LIST: "13.250.64.220,52.76.172.102,13.250.98.136"/' docker-compose.yml
 sed -i 's/HOST_IP: [^"]*/HOST_IP: "13.250.64.220"/' docker-compose.yml
-
 ```
 
 ```shell
@@ -27,11 +34,11 @@ docker-compose build --no-cache
  docker-compose run staking-cli --language=English --non_interactive new-mnemonic --keystore_password=12345678 --chain="mainnet" --num_validators=3 --execution_address=0xCBf79Ae1b1b58Eb6b84Ad159588d35A71dE49b6c
 ```
 ```shell
-docker-compose run staking-cli \
+echo "" | docker-compose run  staking-cli \
 --language=English \
 --non_interactive \
 existing-mnemonic \
---folder /basicconfig \
+--folder /basicconfig/test \
 --mnemonic="sniff goose latin finish gadget dentist theme wet that nut border glad funny february bean net loud sign practice off rigid razor icon game" \
 --keystore_password=12345678 \
 --chain="mainnet" \
